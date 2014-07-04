@@ -34,10 +34,13 @@ public class GuildApp extends JFrame {
         MenuBar b = new MenuBar();
         Menu m = new Menu("File");
         b.add(m);
-        MenuItem open = new MenuItem("Open");
+        MenuItem open = new MenuItem("Open Dungeon");
+        MenuItem newGame = new MenuItem("New Game");
         m.add(open);
+        m.add(newGame);
         this.setMenuBar(b);
         open.addActionListener(new OpenActionListener(this));
+        newGame.addActionListener(new NewGameActionListener(this));
 
     }
 
@@ -72,5 +75,19 @@ public class GuildApp extends JFrame {
             }
         }
 
+    }
+
+    private class NewGameActionListener implements ActionListener {
+        GuildApp app;
+
+        public NewGameActionListener(GuildApp guildApp) {
+            this.app = guildApp;
+
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
     }
 }
