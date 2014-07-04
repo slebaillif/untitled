@@ -22,4 +22,5 @@ public class Vocation {
     public Set<Skills> getFavoredSkills() {
         return favoredSkills;
     }
+
 }
