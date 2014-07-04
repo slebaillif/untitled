@@ -23,6 +23,5 @@ public class TrapImages {
 
     public BufferedImage getRedBlood() {
         return redBlood;
-
     }
 }
