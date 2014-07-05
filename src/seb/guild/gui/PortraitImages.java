@@ -33,18 +33,18 @@ public class PortraitImages {
             instance = new PortraitImages();
         }
         Optional portraitOptional = instance.unusedPortraitList.stream().filter(p -> p.getSex() == sex).findAny();
-        if (portraitOptional.isPresent()){
+        if (portraitOptional.isPresent()) {
             instance.unusedPortraitList.remove(portraitOptional.get());
             instance.usedPortraitList.add((Portrait) portraitOptional.get());
             return ((Portrait) portraitOptional.get()).getPortrait();
-        }
-        else{
+        } else {
             throw new RuntimeException("No more portaits");
         }
     }
 
     private PortraitImages() {
         unusedPortraitList = new ArrayList<>();
+        usedPortraitList = new ArrayList<>();
 
         try {
             unusedPortraitList.add(new Portrait(MALE, ImageIO.read(this.getClass().getClassLoader().getResource("portraits/tn_268_2_jpg.jpg"))));

@@ -1,7 +1,9 @@
 package seb.guild.gui;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import seb.guild.gui.home.HomePanel;
 import seb.guild.model.dungeon.DungeonArea;
+import seb.guild.model.game.Game;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,6 +14,7 @@ import java.io.IOException;
 public class GuildApp extends JFrame {
 
     private DungeonArea area;
+    private Game game;
 
     public GuildApp() throws HeadlessException {
     }
@@ -87,7 +90,14 @@ public class GuildApp extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            game = new Game();
 
+            app.setVisible(false);
+            app.getContentPane().add(new HomePanel(game), BorderLayout.CENTER);
+//            app.setSize(new Dimension(visibleWidth * defaultBlockSize, visibleHeight * defaultBlockSize));
+            app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            app.setVisible(true);
+            app.getContentPane().repaint();
         }
     }
 }
