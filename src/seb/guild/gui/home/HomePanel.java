@@ -12,6 +12,7 @@ public class HomePanel extends JPanel {
 
     public HomePanel(Game game) {
         this.game = game;
+        initUI();
     }
 
     void initUI() {
@@ -21,10 +22,9 @@ public class HomePanel extends JPanel {
 
         JScrollPane scrollPane = new JScrollPane(rosterPanel);
 
-        JPanel containerWest = new JPanel();
-        containerWest.setPreferredSize(new Dimension(5 * 50, 15 * 50));
-        containerWest.setBackground(Color.gray);
-        containerWest.setBorder(BorderFactory.createLineBorder(Color.black));
+        scrollPane.setPreferredSize(new Dimension(5 * 50, 15 * 50));
+        scrollPane.setBackground(Color.gray);
+        scrollPane.setBorder(BorderFactory.createLineBorder(Color.black));
 
         JPanel containerCenter = new JPanel();
 //        containerCenter.setPreferredSize(new Dimension(5 * 50, 15 * 50));
@@ -32,9 +32,9 @@ public class HomePanel extends JPanel {
         containerCenter.setBorder(BorderFactory.createLineBorder(Color.black));
 
         containerCenter.add(resourcePanel, BorderLayout.NORTH);
-        containerWest.add(buildingPanel, BorderLayout.CENTER);
+        containerCenter.add(buildingPanel, BorderLayout.CENTER);
 
-        this.add(containerWest, BorderLayout.WEST);
+        this.add(scrollPane, BorderLayout.WEST);
         this.add(containerCenter, BorderLayout.CENTER);
     }
 

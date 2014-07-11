@@ -93,7 +93,7 @@ public class GuildApp extends JFrame {
             game = new Game();
 
             app.setVisible(false);
-            app.getContentPane().add(new HomePanel(game), BorderLayout.CENTER);
+            app.getContentPane().add(new HomePanel(game));
 //            app.setSize(new Dimension(visibleWidth * defaultBlockSize, visibleHeight * defaultBlockSize));
             app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             app.setVisible(true);
